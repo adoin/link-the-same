@@ -1,0 +1,44 @@
+<!--game-board.wxml-->
+<view class="game-board-container">
+  <!-- 游戏信息栏 -->
+  <view class="game-header">
+    <view class="info-item">
+      <text class="label">分数</text>
+      <text class="value">{{score}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">时间</text>
+      <text class="value">{{timeDisplay}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">连击</text>
+      <text class="value combo">x{{combo}}</text>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="game-controls">
+    <button class="control-btn" bindtap="onHint" disabled="{{hints <= 0}}">
+      提示 ({{hints}})
+    </button>
+    <button class="control-btn" bindtap="onShuffle" disabled="{{shuffles <= 0}}">
+      重排 ({{shuffles}})
+    </button>
+    <button class="control-btn" bindtap="onPause">
+      暂停
+    </button>
+  </view>
+
+  <!-- 游戏棋盘 -->
+  <view class="game-board" style="width: {{boardWidth}}rpx;">
+    <view class="board-row" wx:for="{{board}}" wx:key="index" wx:for-item="row" wx:for-index="rowIndex">
+      <game-tile
+        wx:for="{{row}}"
+        wx:key="id"
+        wx:for-item="tile"
+        tile="{{tile}}"
+        bind:tileclick="onTileTap"
+      />
+    </view>
+  </view>
+</view>

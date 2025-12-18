@@ -1,0 +1,81 @@
+.game-board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 20rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .label {
+      font-size: 24rpx;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 8rpx;
+    }
+
+    .value {
+      font-size: 32rpx;
+      font-weight: bold;
+      color: #fff;
+
+      &.combo {
+        color: #ffd700;
+      }
+    }
+  }
+}
+
+.game-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+
+  .control-btn {
+    padding: 16rpx 32rpx;
+    font-size: 28rpx;
+    background: #fff;
+    border: 2rpx solid #667eea;
+    color: #667eea;
+    border-radius: 8rpx;
+
+    &:disabled {
+      opacity: 0.5;
+      border-color: #ccc;
+      color: #ccc;
+    }
+  }
+}
+
+.game-board {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16rpx;
+  padding: 16rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+
+  .board-row {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.path-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+

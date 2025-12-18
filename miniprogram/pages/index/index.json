@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "game-board": "/components/game-board/game-board"
+  }
+}

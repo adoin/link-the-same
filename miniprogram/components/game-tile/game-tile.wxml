@@ -1,0 +1,8 @@
+<!--game-tile.wxml-->
+<view 
+  class="game-tile {{selected ? 'selected' : ''}} {{matched ? 'matched' : ''}}"
+  catchtap="onTileTap"
+  style="width: {{size}}rpx; height: {{size}}rpx; margin: {{margin}}rpx; background-color: {{tileColor}};"
+>
+  <text wx:if="{{iconType > 0}}" class="tile-text">{{iconType}}</text>
+</view>

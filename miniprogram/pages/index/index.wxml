@@ -1,0 +1,78 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 开始界面 -->
+  <view wx:if="{{gameStatus === 'ready'}}" class="start-screen">
+    <text class="game-title">连连看</text>
+    <text class="game-subtitle">Link Link Game</text>
+    
+    <view class="difficulty-selector">
+      <text class="selector-label">选择难度：</text>
+      <view class="difficulty-options">
+        <view 
+          class="difficulty-option {{difficulty === 'easy' ? 'active' : ''}}"
+          bindtap="selectDifficulty"
+          data-difficulty="easy"
+        >
+          <text>简单</text>
+        </view>
+        <view 
+          class="difficulty-option {{difficulty === 'medium' ? 'active' : ''}}"
+          bindtap="selectDifficulty"
+          data-difficulty="medium"
+        >
+          <text>中等</text>
+        </view>
+        <view 
+          class="difficulty-option {{difficulty === 'hard' ? 'active' : ''}}"
+          bindtap="selectDifficulty"
+          data-difficulty="hard"
+        >
+          <text>困难</text>
+        </view>
+      </view>
+    </view>
+
+    <button class="start-btn" bindtap="startGame">开始游戏</button>
+    
+    <view class="game-rules">
+      <text class="rules-title">游戏规则</text>
+      <text class="rules-item">• 点击两个相同的图标进行消除</text>
+      <text class="rules-item">• 连接路径不能超过2个转角</text>
+      <text class="rules-item">• 连续消除可获得连击加成</text>
+      <text class="rules-item">• 在时间结束前消除所有图标即可获胜</text>
+    </view>
+  </view>
+
+  <!-- 游戏界面 -->
+  <view wx:if="{{gameStatus === 'playing'}}" class="game-screen">
+    <game-board 
+      id="gameBoard"
+      difficulty="{{difficulty}}"
+      bind:gameend="onGameEnd"
+      bind:pause="onPause"
+    />
+  </view>
+
+  <!-- 暂停界面 -->
+  <view wx:if="{{gameStatus === 'paused'}}" class="pause-screen">
+    <view class="pause-dialog">
+      <text class="dialog-title">游戏暂停</text>
+      <button class="dialog-btn" bindtap="resumeGame">继续游戏</button>
+      <button class="dialog-btn secondary" bindtap="restartGame">重新开始</button>
+      <button class="dialog-btn secondary" bindtap="exitGame">退出游戏</button>
+    </view>
+  </view>
+
+  <!-- 游戏结束界面 -->
+  <view wx:if="{{gameStatus === 'won' || gameStatus === 'lost'}}" class="end-screen">
+    <view class="end-dialog">
+      <text class="dialog-title">{{gameStatus === 'won' ? '恭喜通关！' : '游戏失败'}}</text>
+      <view class="score-display">
+        <text class="score-label">最终得分</text>
+        <text class="score-value">{{finalScore}}</text>
+      </view>
+      <button class="dialog-btn" bindtap="restartGame">再来一局</button>
+      <button class="dialog-btn secondary" bindtap="exitGame">返回首页</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+{
+  "name": "miniprogram-ts-sass-quickstart",
+  "version": "1.0.0",
+  "description": "微信小程序连连看项目",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "miniprogram-api-typings": "^2.8.3-1"
+  }
+}
