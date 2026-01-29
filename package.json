@@ -1,12 +1,18 @@
 {
-  "name": "miniprogram-ts-sass-quickstart",
+  "name": "link-link-game",
   "version": "1.0.0",
-  "description": "微信小程序连连看项目",
-  "scripts": {},
-  "keywords": [],
+  "description": "连连看游戏 - 支持微信小程序和H5",
+  "private": true,
+  "scripts": {
+    "dev:mp": "pnpm --filter @link-link/miniprogram dev",
+    "dev:h5": "pnpm --filter @link-link/h5 dev",
+    "build:mp": "pnpm --filter @link-link/miniprogram build",
+    "build:h5": "pnpm --filter @link-link/h5 build"
+  },
+  "keywords": ["link-link", "game", "miniprogram", "h5"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "miniprogram-api-typings": "^2.8.3-1"
+    "typescript": "^5.3.3"
   }
 }

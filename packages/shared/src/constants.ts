@@ -2,6 +2,8 @@
  * 游戏常量配置
  */
 
+import type { DifficultyConfigs, GameDifficulty } from './types'
+
 /** 棋子倍数 - 控制最终生成多少份的棋子 */
 export const MULTIPLE_NUMBER = 2
 
@@ -63,48 +65,11 @@ export const ANIMATION_DURATION = {
   HINT: 500,        // 提示动画
 }
 
-/** 图标资源路径 */
-export const ICON_BASE_PATH = '/images/icons/'
-
-/** 图标文件名列表（根据实际图标文件调整） */
-export const ICON_FILES = [
-  'icon-1.png',
-  'icon-2.png',
-  'icon-3.png',
-  'icon-4.png',
-  'icon-5.png',
-  'icon-6.png',
-  'icon-7.png',
-  'icon-8.png',
-  'icon-9.png',
-  'icon-10.png',
-  'icon-11.png',
-  'icon-12.png',
-  'icon-13.png',
-  'icon-14.png',
-  'icon-15.png',
-  'icon-16.png',
-  'icon-17.png',
-  'icon-18.png',
-  'icon-19.png',
-  'icon-20.png',
-  'icon-21.png',
-  'icon-22.png',
-  'icon-23.png',
-  'icon-24.png',
-  'icon-25.png',
-  'icon-26.png',
-  'icon-27.png',
-  'icon-28.png',
-  'icon-29.png',
-  'icon-30.png',
-]
-
-/** 方块尺寸配置（rpx） */
+/** 方块尺寸配置（px，H5使用） */
 export const TILE_SIZE = {
-  WIDTH: 80,
-  HEIGHT: 80,
-  MARGIN: 4,
+  WIDTH: 35,
+  HEIGHT: 35,
+  MARGIN: 2,
 }
 
 /** 路径线条配置 */
@@ -113,4 +78,12 @@ export const PATH_LINE = {
   COLOR: '#ff6b6b',
 }
 
-
+/** 预定义的颜色数组（30种不同颜色） */
+export const TILE_COLORS = [
+  '#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8',
+  '#F7DC6F', '#BB8FCE', '#85C1E2', '#F8B195', '#C06C84',
+  '#6C5CE7', '#00B894', '#FDCB6E', '#E17055', '#74B9FF',
+  '#A29BFE', '#FD79A8', '#FFEAA7', '#55EFC4', '#81ECEC',
+  '#FAB1A0', '#FF7675', '#DFE6E9', '#00CEC9', '#0984E3',
+  '#6C5CE7', '#FDCB6E', '#E17055', '#D63031', '#00B894',
+]
